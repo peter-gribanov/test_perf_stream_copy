@@ -32,7 +32,7 @@ class StreamCopyWriter
 
     function finish()
     {
-        $handle = fopen('compress.zlib://' . $this->filename, 'wb');
+        $handle = fopen('compress.zlib://' . $this->filename, 'wb9');
         rewind($this->handle);
         stream_copy_to_stream($this->handle, $handle);
         fclose($handle);
