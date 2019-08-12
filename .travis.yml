@@ -17,14 +17,8 @@ matrix:
 
 script:
     - print "short"
-    - ./writer_stream_copy 1 100
-    - ./writer_copy 1 100
-    - ./writer_rename 1 100
+    - ./writer_stream_copy 1 100 && ./writer_copy 1 100 && ./writer_rename 1 100
     - print "medium"
-    - ./writer_stream_copy 10 10
-    - ./writer_copy 10 10
-    - ./writer_rename 10 10
+    - ./writer_stream_copy 10 10 && ./writer_copy 10 10 && ./writer_rename 10 10
     - print "large"
-    - ./writer_stream_copy 100 10
-    - ./writer_copy 100 10
-    - ./writer_rename 100 10
+    - ./writer_stream_copy 100 10 && ./writer_copy 100 10 && ./writer_rename 100 10
