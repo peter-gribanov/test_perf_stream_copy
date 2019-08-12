@@ -1,0 +1,30 @@
+language: php
+
+sudo: false
+
+notifications:
+    email: deploy@peter-gribanov.ru
+
+matrix:
+    include:
+        - php: 7.3
+        - php: 7.2
+        - php: 7.1
+        - php: 7.0
+        - php: 5.6
+        - php: 5.5
+          dist: trusty
+
+script:
+    # short
+    - ./writer_copy 1 100
+    - ./writer_rename 1 100
+    - ./writer_stream_copy 1 100
+    # medium
+    - ./writer_copy 10 10
+    - ./writer_rename 10 10
+    - ./writer_stream_copy 10 10
+    # large
+    - ./writer_copy 100 10
+    - ./writer_rename 100 10
+    - ./writer_stream_copy 100 10
