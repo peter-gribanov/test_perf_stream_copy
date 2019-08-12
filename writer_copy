@@ -47,11 +47,11 @@ class CopyWriter
 $writer = new CopyWriter();
 
 if (empty($argv[1]) || !is_numeric($argv[1])) {
-    throw new \Exception('Not set data size');
+    throw new Exception('Not set data size');
 }
 
 if (empty($argv[2]) || !is_numeric($argv[2])) {
-    throw new \Exception('Not set total iterations');
+    throw new Exception('Not set total iterations');
 }
 
 $data_size = (int) $argv[1]; // in Mb
