@@ -30,3 +30,5 @@ script:
     - ./writer_stream_copy 10240 100 && ./writer_copy 10240 100 && ./writer_rename 10240 100
     # large
     - ./writer_stream_copy 102400 100 && ./writer_copy 102400 100 && ./writer_rename 102400 100
+    # very large
+    - ./writer_stream_copy 1048576 100 && ./writer_copy 1048576 100 && ./writer_rename 1048576 100
