@@ -59,10 +59,11 @@ $iterations = (int) $argv[2];
 $data = str_repeat('1', 1024); // 1 Kb
 
 printf("rename()\n");
-printf("Data size: %d Kb\n", $data_size);
 printf("Iterations: %d\n", $iterations);
+printf("Data size: %d bytes\n", $data_size * 1024);
 
 // test
+$file_size = 0;
 $start = microtime(true);
 for ($i = $iterations; $i; $i--) {
     $filename = tempnam(sys_get_temp_dir(), 'test_writer');
@@ -71,6 +72,12 @@ for ($i = $iterations; $i; $i--) {
         $writer->append($data);
     }
     $writer->finish();
+    if ($file_size === 0) {
+        $file_size = filesize($filename);
+    }
     unlink($filename);
 }
-printf("Write: %f\n".PHP_EOL, microtime(true) - $start);
+$end = microtime(true);
+
+printf("File size: %d bytes\n", $file_size);
+printf("Write: %f\n".PHP_EOL, $end - $start);
