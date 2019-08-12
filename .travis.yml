@@ -29,4 +29,4 @@ script:
     # medium
     - ./writer_stream_copy 10240 100 && ./writer_copy 10240 100 && ./writer_rename 10240 100
     # large
-    - ./writer_stream_copy 102400 100 && ./writer_copy 102400 100 && ./writer_rename 102400 100
+    - ./writer_stream_copy 102400 10 && ./writer_copy 102400 10 && ./writer_rename 102400 10
