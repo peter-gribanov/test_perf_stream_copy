@@ -23,7 +23,7 @@ matrix:
 
 script:
     # very short
-    - ./writer_stream_copy 128 1000 && ./writer_copy 128 1000 && ./writer_rename 128 1000
+    - ./writer_stream_copy 128 10000 && ./writer_copy 128 10000 && ./writer_rename 128 10000
     # short
     - ./writer_stream_copy 1024 1000 && ./writer_copy 1024 1000 && ./writer_rename 1024 1000
     # medium
