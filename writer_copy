@@ -54,14 +54,13 @@ if (empty($argv[2]) || !is_numeric($argv[2])) {
     throw new Exception('Not set total iterations');
 }
 
-$data_size = (int) $argv[1]; // in Mb
-$data_size *= 1024;
+$data_size = (int) $argv[1]; // in Kb
 $iterations = (int) $argv[2];
 
 $data = str_repeat('1', 1024); // 1 Kb
 
 printf("copy()\n");
-printf("Data size: %d Mb\n", $data_size);
+printf("Data size: %d Kb\n", $data_size);
 printf("Iterations: %d\n", $iterations);
 
 // test
