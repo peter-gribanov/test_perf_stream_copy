@@ -1,12 +1,5 @@
 #!/usr/bin/env php
 <?php
-declare(strict_types=1);
-
-/**
- * This file is part of the Karusel project.
- *
- * @copyright 2010-2019 АО «Карусель» <webmaster@e5.karusel-tv.ru>
- */
 
 class StreamCopyWriter
 {
@@ -23,7 +16,7 @@ class StreamCopyWriter
     /**
      * @param string $filename
      */
-    function open(string $filename): void
+    function open($filename)
     {
         $this->filename = $filename;
         $this->handle = fopen('php://temp/', 'wb');
@@ -32,12 +25,12 @@ class StreamCopyWriter
     /**
      * @param string $data
      */
-    function append(string $data): void
+    function append($data)
     {
         fwrite($this->handle, $data);
     }
 
-    function finish(): void
+    function finish()
     {
         $handle = fopen('compress.zlib://' . $this->filename, 'wb');
         rewind($this->handle);

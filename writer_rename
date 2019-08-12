@@ -1,6 +1,5 @@
 #!/usr/bin/env php
 <?php
-declare(strict_types=1);
 
 class RenameWriter
 {
@@ -21,7 +20,7 @@ class RenameWriter
     /**
      * @param string $filename
      */
-    function open(string $filename): void
+    function open($filename)
     {
         $this->filename = $filename;
         $this->tmp_filename = tempnam(sys_get_temp_dir(), basename($filename));
@@ -31,12 +30,12 @@ class RenameWriter
     /**
      * @param string $data
      */
-    function append(string $data): void
+    function append($data)
     {
         gzwrite($this->handle, $data);
     }
 
-    function finish(): void
+    function finish()
     {
         gzclose($this->handle);
         $this->handle = null;
