@@ -61,11 +61,10 @@ printf("StreamCopyWriter\n");
 printf("Data size: %d Mb\n", $data_size);
 printf("Iterations: %d\n", $iterations);
 
-$filename = tempnam(sys_get_temp_dir(), 'test_writer');
-
 // test
 $start = microtime(true);
 for ($i = $iterations; $i; $i--) {
+    $filename = tempnam(sys_get_temp_dir(), 'test_writer');
     $writer->open($filename);
     for ($j = 0; $j <= $data_size; $j++) {
         $writer->append($data);
