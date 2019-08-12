@@ -60,7 +60,7 @@ $iterations = (int) $argv[2];
 
 $data = str_repeat('1', 1024); // 1 Kb
 
-printf("CopyWriter\n");
+printf("copy()\n");
 printf("Data size: %d Mb\n", $data_size);
 printf("Iterations: %d\n", $iterations);
 
